@@ -56,12 +56,29 @@ StartProtectedMode:
 
 [extern _start]
 
+%include "IDT.asm"
+
 Start64Bit:
 	mov edi, 0xb8000
 	mov rax, 0x1f201f201f201f20
 	mov ecx, 500
 	rep stosq
+
+	call ActivateSSE
 	call _start
+	
 	jmp $
+
+ActivateSSE:
+	mov rax, cr0
+	and ax, 0b11111101
+	or ax, 0b00000001
+	mov cr0, rax
+
+	mov rax, cr4
+	or ax, 0b1100000000
+	mov cr4, rax
+
+	ret
 
 times 2048-($-$$) db 0
