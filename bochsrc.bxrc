@@ -7,7 +7,7 @@ romimage: file="C:\Program Files\Bochs-2.6.11/BIOS-bochs-latest", address=0x0000
 vgaromimage: file="C:\Program Files\Bochs-2.6.11/VGABIOS-lgpl-latest"
 boot: floppy
 floppy_bootsig_check: disabled=0
-floppya: type=1_2, 1_2="C:\Users\Generic Youtuber\Desktop\Operating System\bootloader.flp", status=inserted, write_protected=0
+floppya: type=1_2, 1_2="C:\Users\Generic Youtuber\source\repos\Operating System YT\Operating System YT\bootloader.flp", status=inserted, write_protected=0
 # no floppyb
 ata0: enabled=true, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
 ata0-master: type=none
@@ -26,7 +26,7 @@ optramimage2: file=none
 optramimage3: file=none
 optramimage4: file=none
 pci: enabled=1, chipset=i440fx
-vga: extension=vbe, update_freq=5, realtime=1
+vga: extension=vbe, update_freq=30, realtime=1
 cpu: count=1, ips=4000000, model=bx_generic, reset_on_triple_fault=1, cpuid_limit_winnt=0, ignore_bad_msrs=1, mwait_is_nop=0
 cpuid: level=6, stepping=3, model=3, family=6, vendor_string="GenuineIntel", brand_string="              Intel(R) Pentium(R) 4 CPU        "
 cpuid: mmx=true, apic=xapic, simd=sse2, sse4a=false, misaligned_sse=false, sep=true

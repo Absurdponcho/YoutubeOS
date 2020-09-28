@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Assembly">
+      <UniqueIdentifier>{c7c62c84-53db-46a4-87c1-7388ac9f2897}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CPP">
+      <UniqueIdentifier>{c5932e6a-f4ce-4670-a839-4ad184819450}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="compileasm.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="IDT.asm">
+      <Filter>Source Files\Assembly</Filter>
+    </None>
+    <None Include="CPUID.asm">
+      <Filter>Source Files\Assembly</Filter>
+    </None>
+    <None Include="DiskRead.asm">
+      <Filter>Source Files\Assembly</Filter>
+    </None>
+    <None Include="ExtendedProgram.asm">
+      <Filter>Source Files\Assembly</Filter>
+    </None>
+    <None Include="gdt.asm">
+      <Filter>Source Files\Assembly</Filter>
+    </None>
+    <None Include="bootloader.asm">
+      <Filter>Source Files\Assembly</Filter>
+    </None>
+    <None Include="Binaries.asm">
+      <Filter>Source Files\Assembly</Filter>
+    </None>
+    <None Include="print.asm">
+      <Filter>Source Files\Assembly</Filter>
+    </None>
+    <None Include="SimplePaging.asm">
+      <Filter>Source Files\Assembly</Filter>
+    </None>
+    <None Include="link.ld" />
+    <None Include="DetectMemory.asm">
+      <Filter>Source Files\Assembly</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="IDT.cpp">
+      <Filter>Source Files\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="IO.cpp">
+      <Filter>Source Files\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel.cpp">
+      <Filter>Source Files\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="TextPrint.cpp">
+      <Filter>Source Files\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryMap.cpp">
+      <Filter>Source Files\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Source Files\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Heap.cpp">
+      <Filter>Source Files\CPP</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KBScanCodeSet1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IDT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextPrint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Typedefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextModeColorCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
