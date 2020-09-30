@@ -30,6 +30,9 @@ ReadDisk:
 		add bx, 512 ; write to the next 512 bytes
 		inc cx ; read the next sector
 		
+		cmp cl, 512 ; limit to 512 sectors
+		je DiskRead_exit
+		
 		jmp DiskRead_loop
 
 	DiskRead_exit:
