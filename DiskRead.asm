@@ -10,21 +10,36 @@ ReadDisk:
 	mov ch, 0x00
 	mov dh, 0x00
 	mov cl, 0x02
+	
+	DiskRead_loop:
+		
+		push ax
+		push bx
+		push cx
+		push dx
+		
+		int 0x13
+		
+		pop dx
+		pop cx
+		pop bx
+		pop ax
+		
+		jc DiskRead_exit
+		
+		add bx, 512 ; write to the next 512 bytes
+		inc cx ; read the next sector
+		
+		jmp DiskRead_loop
 
-	int 0x13
-
-	jc DiskReadFailed
-
-	ret
+	DiskRead_exit:
+		
+		pop dx
+		pop cx
+		pop bx
+		pop ax
+		
+		ret
 
 BOOT_DISK:
 	db 0
-
-DiskReadErrorString:
-	db 'Disk Read Failed',0
-
-DiskReadFailed:
-	mov bx, DiskReadErrorString
-	call PrintString
-
-	jmp $
