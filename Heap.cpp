@@ -22,7 +22,7 @@ void* malloc(uint_64 size) {
 	while (true) {
 		if (currentMemorySegment->MemoryLength >= size) {
 
-			if (currentMemorySegment->MemoryLength != size) {
+			if (currentMemorySegment->MemoryLength > size + sizeof(MemorySegmentHeader)) {
 				MemorySegmentHeader* newSegmentHeader = (MemorySegmentHeader*)((uint_64)currentMemorySegment + sizeof(MemorySegmentHeader) + size);
 				
 				newSegmentHeader->Free = true;
@@ -34,12 +34,13 @@ void* malloc(uint_64 size) {
 
 				currentMemorySegment->NextFreeSegment = newSegmentHeader;
 				currentMemorySegment->NextSegment = newSegmentHeader;
+				currentMemorySegment->MemoryLength = size; 
 			}
 			if (currentMemorySegment == FirstFreeMemorySegment) {
 				FirstFreeMemorySegment = currentMemorySegment->NextFreeSegment;
 			}
 			currentMemorySegment->Free = false;
-			currentMemorySegment->MemoryLength = size;
+			
 			if (currentMemorySegment->PreviousFreeSegment != 0) currentMemorySegment->PreviousFreeSegment->NextFreeSegment = currentMemorySegment->NextFreeSegment;
 			if (currentMemorySegment->NextFreeSegment != 0) currentMemorySegment->NextFreeSegment->PreviousFreeSegment = currentMemorySegment->PreviousFreeSegment;
 			if (currentMemorySegment->PreviousSegment != 0) currentMemorySegment->PreviousSegment->NextFreeSegment = currentMemorySegment->NextFreeSegment;
