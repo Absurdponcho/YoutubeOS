@@ -5,8 +5,7 @@ ENTRY (_start)
 INPUT
 (
     ExtendedProgram.o
-    Kernel.o
-    Binaries.o
+    libkernel.a
 )
 
 OUTPUT
