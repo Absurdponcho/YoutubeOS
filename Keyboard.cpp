@@ -31,6 +31,7 @@ void StandardKeyboardHandler(uint_8 scanCode, uint_8 chr) {
 			break;
 		case 0xAA: //Left Shift Released
 			LeftShiftPressed = false;
+			break;
 		case 0x36: //Right Shift
 			RightShiftPressed = true;
 			break;
