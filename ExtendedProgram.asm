@@ -81,4 +81,4 @@ ActivateSSE:
 
 	ret
 
-times 2048-($-$$) db 0
+times 512-($-$$) db 0
